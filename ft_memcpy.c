@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:41:23 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/01 12:41:27 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/01 12:13:22 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/01 12:39:34 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-char *ft_strrchr(const char *s, int c)
+void	*ft_memcpy(void *dest, const void *src, int n)
 {
-	int i = 0;
-	int f = 0;
-	while(s[i])
-	{
-		i++;
-		if(s[i] == (char)c)
-			f = 1;
-	}
-	if (f == 0)
-		return (char *)(0);
-	while(s[i] != c && i > 0)
-		i--;
-	return (char *)(s + i);
-}
+	char *d;
+	char *s;
+
+	d = (char *)dest;
+	s = (char *)src;
+	while(n-- > 0)
+		*d++ = *s++;
+	return dest;
+

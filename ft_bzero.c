@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:41:23 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/01 12:41:27 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/01 12:37:24 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/01 12:37:29 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *s, int c)
+void	*ft_bzero(void *s, int n)
 {
-	int i = 0;
-	int f = 0;
-	while(s[i])
-	{
-		i++;
-		if(s[i] == (char)c)
-			f = 1;
-	}
-	if (f == 0)
-		return (char *)(0);
-	while(s[i] != c && i > 0)
-		i--;
-	return (char *)(s + i);
+	char	*ptr;
+
+	ptr = (char *)s;
+	while(n-- > 0)
+		*ptr++ = 0;
+	return (s);
 }
