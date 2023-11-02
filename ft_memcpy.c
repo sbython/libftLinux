@@ -9,7 +9,10 @@
 /*   Updated: 2023/11/01 12:39:34 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*ft_memcpy(void *dest, const void *src, int n)
+
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char *d;
 	char *s;
@@ -20,3 +23,4 @@ void	*ft_memcpy(void *dest, const void *src, int n)
 		*d++ = *s++;
 	return dest;
 
+}
