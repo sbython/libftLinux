@@ -6,13 +6,12 @@
 #    By: msbai <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 10:46:25 by msbai             #+#    #+#              #
-#    Updated: 2023/11/02 10:46:31 by msbai            ###   ########.fr        #
+#    Updated: 2023/11/03 12:20:42 by msbai            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 -include .env
 export
-
-FUN := isalpha  \
+fun := isalpha  \
 			isalnum \
 			isdigit \
 			isascii \
@@ -28,7 +27,7 @@ FUN := isalpha  \
 			tolower \
 			strchr \
 			strrchr \
-FUNC := $(patsubst %,%.c, $(FUN))
+FUNC != ls *.c | tr -d ";"
 
 all: $(FUNC)
-	echo $(NAME)
+	gcc *.c libft.h -o rida

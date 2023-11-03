@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:40:12 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/01 12:40:13 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/01 21:10:57 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/03 13:58:35 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+#include "libft.h"
+
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
-	int i;
-	while(s[i] != c && s[i])
-	{
-		i++;
-	}
-	if(s[i])
-		return (s+i);
-	else
-		return (0);
+	char *s = (char *)src;
+	char *d = (char *)dest;
+	
+	printf("rida");
 }

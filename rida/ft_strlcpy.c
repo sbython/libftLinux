@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:40:12 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/01 12:40:13 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/01 22:04:06 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/02 08:46:24 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+unsigned int strlcpy(char *dest, const char *src, unsigned int n)
 {
-	int i;
-	while(s[i] != c && s[i])
-	{
-		i++;
-	}
-	if(s[i])
-		return (s+i);
-	else
-		return (0);
+   int len;
+
+   len = 0;
+   while (src[len] && --n)
+      *dest++ = src[len++];
+   *dest = '\0'; 
+   while (src[len] && --n)
+      len++;
+   return len;
 }
