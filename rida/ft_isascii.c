@@ -6,15 +6,13 @@
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:38:36 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/01 12:38:38 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/05 16:52:16 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-int isascii(int c)
+int	ft_isascii(int c)
 {
-	if (c >> 7 == 0 )
-       		return 1;
-    	return 0;
+	if (c >> 7 == 0)
+		return (1);
+	return (0);
 }
