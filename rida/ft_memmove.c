@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:41:23 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/06 14:17:02 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/06 19:46:42 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/06 21:46:30 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int	i;
-	int	f;
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{	
+	char	*s;
+	char	*d;
 
-	i = 0;
-	f = 0;
-	if (c == 0)
-		return ((char *)(&s[ft_strlen(s)]));
-	while (s[i])
+	s = (char *)src;
+	d = (char *)dest;
+	if (d == s)
+		return (dest);
+	else if (d < s)
 	{
-		if (s[i] == (char)c)
-			f = 1;
-		i++;
+		while (n-- > 0)
+			*d++ = *s++;
 	}
-	if (f == 0)
-		return (0);
-	while (s[i] != c && i > 0)
-		i--;
-	return ((char *)(s + i));
+	else
+	{
+		while (n-- > 0)
+			d[n] = s[n];
+	}
+	return (dest);
 }

@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:41:23 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/06 14:17:02 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/07 20:30:54 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/07 21:06:36 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	int	f;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t			i;
 
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
 	i = 0;
-	f = 0;
-	if (c == 0)
-		return ((char *)(&s[ft_strlen(s)]));
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			f = 1;
+	while (i < n && p1[i] == p2[i])
 		i++;
-	}
-	if (f == 0)
+	if (i == n)
 		return (0);
-	while (s[i] != c && i > 0)
-		i--;
-	return ((char *)(s + i));
+	return ((int)(p1[i] - p2[i]));
 }

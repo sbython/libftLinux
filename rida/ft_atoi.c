@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:41:23 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/06 14:17:02 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/06 22:13:35 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/07 10:38:43 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strrchr(const char *s, int c)
+int	ft_atoi(const char *num)
 {
 	int	i;
-	int	f;
+	int	res;
+	int	sing;
 
 	i = 0;
-	f = 0;
-	if (c == 0)
-		return ((char *)(&s[ft_strlen(s)]));
-	while (s[i])
+	res = 0;
+	sing = 1;
+	while ((num[i] >= 9 && num[i] <= 13) || num[i] == 32)
 	{
-		if (s[i] == (char)c)
-			f = 1;
 		i++;
 	}
-	if (f == 0)
-		return (0);
-	while (s[i] != c && i > 0)
-		i--;
-	return ((char *)(s + i));
+	if (num[i] == '-')
+	{
+		i++;
+		sing = -1;
+	}
+	else if (num[i] == '+')
+		i++;
+	while (num[i] <= '9' && num[i] >= '0')
+		res = (res * 10) + num[i++] - '0';
+	return (res * sing);
 }

@@ -6,7 +6,7 @@
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 09:27:53 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/05 14:21:56 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/06 11:15:41 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ unsigned int	ft_strlcat(char *dest, const char *src, unsigned int n)
 	i = 0;
 	if (n == 0 || n <= ldest)
 	{
-		return (n + ldest);
+		return (n + lsrc);
 	}
-	while (src[i] && i <= n - ldest - 1)
+	while (src[i] && i < n - ldest - 1)
 	{
 		dest[i + ldest] = src[i];
 		i++;

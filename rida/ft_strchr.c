@@ -6,23 +6,24 @@
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:40:12 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/05 17:15:24 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/06 12:23:41 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	if (c == '\0')
-		return "\0";
-	while (s[i] != c && s[i])
+	if (c == 0)
+		return ((char *)(&s[ft_strlen(s)]));
+	while (s[i])
 	{
+		if (c == s[i])
+			return ((char *)(&s[i]));
 		i++;
 	}
-	if (s[i])
-		return ((char *)(s + i));
-	else
-		return (0);
+	return (NULL);
 }

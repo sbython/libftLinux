@@ -6,11 +6,13 @@
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:37:24 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/01 12:37:29 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/06 18:47:09 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_bzero(void *s, int n)
+#include "libft.h"
+
+void	*ft_bzero(void *s, size_t n)
 {
 	char	*ptr;
 
