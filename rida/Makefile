@@ -6,7 +6,7 @@
 #    By: msbai <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 10:46:25 by msbai             #+#    #+#              #
-#    Updated: 2023/11/08 11:41:07 by msbai            ###   ########.fr        #
+#    Updated: 2023/11/09 22:00:06 by msbai            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,13 +35,19 @@ FU := ft_bzero \
 	ft_strncmp \
 	ft_memchr \
 	ft_memcmp \
-	ft_strdup 
+	ft_strdup \
+	ft_substr \
+	ft_strcat \
+	ft_strjoin \
+	ft_itoa \
+	ft_strnub \
+	ft_strtrim
 FUN := $(patsubst %,%.c,$(FU))
 OBJ := $(patsubst %,%.o,$(FU))
 
 all: $(NAME)
 
-$(NAME):$(OB)
+$(NAME):$(OBJ)
 	$(CCF) -c $(FUN)
 	ar rcs $(NAME) $(OBJ)
 clean:
