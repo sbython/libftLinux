@@ -6,7 +6,7 @@
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:53:12 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/09 18:21:52 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/10 14:31:19 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strnub(long int n, char *s, int len);
 char	*ft_itoa(int n);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 #endif

@@ -6,7 +6,7 @@
 #    By: msbai <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 10:46:25 by msbai             #+#    #+#              #
-#    Updated: 2023/11/09 22:00:06 by msbai            ###   ########.fr        #
+#    Updated: 2023/11/10 14:05:28 by msbai            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,8 @@ FU := ft_bzero \
 	ft_strjoin \
 	ft_itoa \
 	ft_strnub \
-	ft_strtrim
+	ft_strtrim \
+	ft_strmapi
 FUN := $(patsubst %,%.c,$(FU))
 OBJ := $(patsubst %,%.o,$(FU))
 
