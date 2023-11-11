@@ -23,8 +23,7 @@ char	*ft_strnstr(const char *str, const char *str1, size_t len)
 		return ((char *)str);
 	while (len-- > 0 && str[i])
 	{
-		while (str[i + i1] == str1[i1]
-			&&str[i + i1] && len - i1 > 0)
+		while (str[i + i1] == str1[i1] && str[i + i1] && len - i1 > 0)
 			i1++;
 		if (!str1[i1])
 			return ((char *)(str + i));

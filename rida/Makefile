@@ -42,7 +42,8 @@ FU := ft_bzero \
 	ft_itoa \
 	ft_strnub \
 	ft_strtrim \
-	ft_strmapi
+	ft_strmapi \
+	ft_split
 FUN := $(patsubst %,%.c,$(FU))
 OBJ := $(patsubst %,%.o,$(FU))
 

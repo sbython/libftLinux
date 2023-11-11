@@ -21,7 +21,7 @@ char	*ft_strcat(char *dest, const char *src, size_t n)
 	i = 0;
 	if (n == 0 || n <= ldest)
 	{
-		return dest;
+		return (dest);
 	}
 	while (src[i] && i < n - ldest - 1)
 	{
@@ -29,5 +29,5 @@ char	*ft_strcat(char *dest, const char *src, size_t n)
 		i++;
 	}
 	dest[i + ldest] = '\0';
-	return dest;
+	return (dest);
 }
