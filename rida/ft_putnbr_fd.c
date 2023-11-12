@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 20:09:06 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/07 20:25:51 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/12 16:48:21 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/12 17:32:29 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*ptr;
-	size_t	i;
+	int	i;
+	char	str[10];
+	long int	num;
 
+	num = n;
 	i = 0;
-	ptr = (char *)s;
 	if (n == 0)
-		return ((void *)(s + ft_strlen(s)));
-	if (c == 0)
-		return ((void *)(s));
-	while (n--)
+		ft_put = n;
+	i = 0;
+	if (n == 0)
+		ft_putchar_fd('0', fd);
+	if (n < 0)
 	{
-		if (ptr[i] == c)
-			return ((void *)(s + i));
-		i++;
+		ft_putchar_fd('-', fd);
+		num *= -1;
 	}
-	return (NULL);
+	while (num > 0)
+	{
+		str[i++] = (num % 10) + '0';
+		num /= 10;
+	}
+	while (i > 0)
+	{
+		ft_putchar_fd(str[--i], fd);
+	}
 }

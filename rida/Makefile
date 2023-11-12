@@ -43,7 +43,11 @@ FU := ft_bzero \
 	ft_strnub \
 	ft_strtrim \
 	ft_strmapi \
-	ft_split
+	ft_split\
+	ft_putchar_fd \
+	ft_putstr_fd \
+	ft_putendl_fd \
+	ft_putnbr_fd
 FUN := $(patsubst %,%.c,$(FU))
 OBJ := $(patsubst %,%.o,$(FU))
 
