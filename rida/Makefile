@@ -15,39 +15,39 @@ NAME := libft.a
 CCF  := cc -Wall -Wextra -Werror
 FU := ft_bzero \
       	ft_isascii \
-	ft_memcpy \
-	ft_strlcat \
+		ft_memcpy \
+		ft_strlcat \
        	ft_strrchr \
-	ft_isalnum \
+		ft_isalnum \
        	ft_isdigit \
        	ft_memset \
        	ft_strlcpy \
        	ft_tolower \
-	ft_isalpha \
-	ft_isprint \
+		ft_isalpha \
+		ft_isprint \
       	ft_strchr \
-	ft_strlen \
-	ft_toupper \
-	ft_calloc \
-	ft_memmove \
-	ft_atoi	\
-	ft_strnstr \
-	ft_strncmp \
-	ft_memchr \
-	ft_memcmp \
-	ft_strdup \
-	ft_substr \
-	ft_strcat \
-	ft_strjoin \
-	ft_itoa \
-	ft_strnub \
-	ft_strtrim \
-	ft_strmapi \
-	ft_split\
-	ft_putchar_fd \
-	ft_putstr_fd \
-	ft_putendl_fd \
-	ft_putnbr_fd
+		ft_strlen \
+		ft_toupper \
+		ft_calloc \
+		ft_memmove \
+		ft_atoi	\
+		ft_strnstr \
+		ft_strncmp \
+		ft_memchr \
+		ft_memcmp \
+		ft_strdup \
+		ft_substr \
+		ft_strcat \
+		ft_strjoin \
+		ft_itoa \
+		ft_strnub \
+		ft_strtrim \
+		ft_strmapi \
+		ft_split\
+		ft_putchar_fd \
+		ft_putstr_fd \
+		ft_putendl_fd \
+		ft_putnbr_fd
 FUN := $(patsubst %,%.c,$(FU))
 OBJ := $(patsubst %,%.o,$(FU))
 

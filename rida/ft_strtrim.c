@@ -24,7 +24,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	if (!*set)
 		return ((char *)(s1));
-	ft_bzero(aree, sizeof(256) * 256);
+	ft_bzero(aree, sizeof(int) * 256);
 	while (set[i])
 		aree[(int)set[i++]] = 1;
 	i = 0;

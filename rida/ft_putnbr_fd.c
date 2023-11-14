@@ -14,14 +14,11 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-	char	str[10];
+	int			i;
+	char		str[10];
 	long int	num;
 
 	num = n;
-	i = 0;
-	if (n == 0)
-		ft_put = n;
 	i = 0;
 	if (n == 0)
 		ft_putchar_fd('0', fd);

@@ -39,9 +39,10 @@ char	*ft_itoa(int n)
 		len = 1;
 	}
 	len += cont(num);
-	ptr = (char *)malloc(sizeof(char) * len);
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
 	ptr = ft_strnub(n, ptr, len);
+	ptr[len] = '\0';
 	return (ptr);
 }
