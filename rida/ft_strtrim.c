@@ -20,10 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 
 	i = 0;
-	if (!*s1)
-		return (0);
-	if (!*set)
-		return ((char *)(s1));
+	if (!s1 || !set)
+		return (NULL);
 	ft_bzero(aree, sizeof(int) * 256);
 	while (set[i])
 		aree[(int)set[i++]] = 1;
@@ -31,12 +29,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (aree[(int)s1[i]] && s1[i])
 		i++;
 	len = ft_strlen(s1);
-	while (aree[(int)s1[len - 1]] && len > 0)
+	
+	while (aree[(int)s1[len - 1]] && len > i)
 		len--;
-	if (!len)
-		return ((char *)malloc(1));
+	if ((len - i) < 0)
+		return (NULL);
 	ptr = (char *)malloc(sizeof(char) * (len - i + 1));
-	ft_memcpy(ptr, (s1 + i), len - i);
-	ptr[len + i] = '\0';
+	if (!ptr)
+		return(NULL);
+	ft_memcpy(ptr, s1 + i, sizeof(char)*(len - i));
+	ptr[len - i] = '\0';
 	return (ptr);
 }

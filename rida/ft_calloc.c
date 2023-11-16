@@ -15,10 +15,14 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
+	size_t a;
 
-	ptr = (void *)malloc(nmemb * size);
+	a = nmemb * size;
+	if (SIZE_MAX / nmemb  < size)
+		return (NULL);
+	ptr = (void *)malloc(a);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, (nmemb * size));
+	ft_bzero(ptr, (a));
 	return (ptr);
 }

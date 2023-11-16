@@ -14,16 +14,16 @@
 
 char	*ft_strnstr(const char *str, const char *str1, size_t len)
 {
-	int	i;
-	int	i1;
+	size_t	i;
+	size_t	i1;
 
 	i = 0;
 	i1 = 0;
 	if (str1 == NULL || str1[0] == '\0')
 		return ((char *)str);
-	while (len-- > 0 && str[i])
+	while (len > i && str[i])
 	{
-		while (str[i + i1] == str1[i1] && str[i + i1] && len - i1 > 0)
+		while (str[i + i1] == str1[i1] && str[i + i1] &&  len > (i + i1))
 			i1++;
 		if (!str1[i1])
 			return ((char *)(str + i));

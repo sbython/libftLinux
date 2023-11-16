@@ -14,6 +14,9 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
+# include <limits.h>
+# include <stddef.h>
 
 unsigned int	ft_strlen(const char *s);
 int	ft_toupper(int c);

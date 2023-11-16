@@ -25,7 +25,7 @@ char	*ft_strnub(long int n, char *s, int len)
 	else if (n < 0)
 	{
 		s[0] = '-';
-		num = -n;
+		num *= -1;
 	}
 	while (num >= 10)
 	{

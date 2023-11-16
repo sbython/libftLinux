@@ -55,7 +55,7 @@ all: $(NAME)
 
 $(NAME):$(OBJ)
 	$(CCF) -c $(FUN)
-	ar rcs $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ) 
 clean:
 	@rm -rf $(OBJ)
 
