@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 13:26:59 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/11 13:27:33 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/09 12:36:23 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/09 12:51:19 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-		f(i, &s[i++]);
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*ptr;
+
+	if (ft_strlen(s) < start)
+		return (ft_calloc(1, 1));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ptr)
+		return (NULL);
+	ft_memcpy(ptr, s + start, len);
+	ptr[len] = '\0';
+	return (ptr);
 }
