@@ -12,97 +12,108 @@
 
 #include "libft.h"
 
-static int	next(char *s, char c)
+static char	**freefun(char **ptr, int i)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] && s[i] == c)
-		i++;
-	return (i);
+	while (i >= 0)
+	{
+		free(ptr[i--]);
+	
+	}
+	free(ptr);
+	return (NULL);
 }
 
-static char	**maloc(char *s, char c)
+static char	**mall(char *s, char c)
 {
+	char	**ptr;
+	int		start;
 	int		i;
 	int		cont;
-	char	**ptr;
 
 	cont = 0;
-	i = next(s, c);
+	i = 0;
+	start = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			cont++;
-			i += next((char *)s + i, c);
-		}
-		else
+		while (s[i] == c && s[i])
 			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (start != i)
+			cont++;
 	}
-	if (s[i - 1] != c)
-		cont++;
 	ptr = (char **)malloc(sizeof(char *) * (cont + 1));
 	if (!ptr)
 		return (NULL);
-	ptr[cont] = NULL;
 	return (ptr);
 }
 
-static void	freefun(char **ptr, int j)
-{
-	while (j--)
-	{
-		free(ptr[j]);
-	}
-	free(ptr);
-}
-
-static void	mall(char **ptr, char *s, char c, int i)
+static char	**malworld(char **ptr, char *s, char c)
 {
 	int	start;
+	int	i;
 	int	j;
 
 	j = 0;
-	start = next((char *)s, c);
+	i = 0;
+	start = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c && s[i])
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (start != i)
 		{
-			ptr[j] = ft_substr((char *)s, start, i - start);
-			if (!ptr[j])
-			{
-				freefun(ptr, j);
-				return ;
-			}
-			i += next((char *)s + i, c);
-			start = i;
+			ptr[j] = (char *)malloc(sizeof(char) * (i - start + 1));
+			if (!ptr[j]) 	
+				return (freefun(ptr, j));
 			j++;
 		}
-		else
-			i++;
 	}
-	if (s[i - 1] != c)
-		ptr[j] = ft_substr((char *)s, start, i - start);
+	ptr[j] = NULL;
+	return (ptr);
+}
+
+static void	putworld(char **ptr, char *s, char c)
+{
+	int	start;
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
+	start = 0;
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (start != i)
+		{
+			ft_memcpy(ptr[j], s + start, i - start);
+			ptr[j][i - start] = '\0';
+			j++;
+		}
+	}
+	//ptr[j] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
-
-	if (!s || *s == 0)
-	{
-		ptr = (char **)malloc(sizeof(char *) * 1);
-		if (!ptr)
-			return (NULL);
-		ptr[0] = NULL;
-		return (ptr);
-	}
-	ptr = maloc((char *)s, c);
+	if (!s)
+		return (NULL);
+	ptr = mall((char *)s, c);
 	if (!ptr)
 		return (NULL);
-	mall(ptr, (char *)s, c, next((char *)s, c));
+	ptr = malworld(ptr, (char *)s, c);
 	if (!ptr)
 		return (NULL);
+	putworld(ptr, (char *)s, c);
 	return (ptr);
 }

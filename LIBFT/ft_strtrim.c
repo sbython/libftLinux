@@ -38,15 +38,6 @@ static size_t	str_len(char const *str)
 	return (i);
 }
 
-static char	*str_new(size_t n)
-{
-	char	*str;
-
-	str = (char *)malloc(sizeof(char) * (n + 1));
-	if (!str)
-		return (NULL);
-	return (str);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -63,7 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = str_len(s1);
 	while (end > start && char_check(set, *(s1 + (end - 1))))
 		end--;
-	trim = str_new(end - start);
+	trim = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!trim)
 		return (NULL);
 	i = 0;
