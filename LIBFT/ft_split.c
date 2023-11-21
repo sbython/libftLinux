@@ -17,7 +17,6 @@ static char	**freefun(char **ptr, int i)
 	while (i >= 0)
 	{
 		free(ptr[i--]);
-	
 	}
 	free(ptr);
 	return (NULL);
@@ -68,7 +67,7 @@ static char	**malworld(char **ptr, char *s, char c)
 		if (start != i)
 		{
 			ptr[j] = (char *)malloc(sizeof(char) * (i - start + 1));
-			if (!ptr[j]) 	
+			if (!ptr[j])
 				return (freefun(ptr, j));
 			j++;
 		}
@@ -100,12 +99,12 @@ static void	putworld(char **ptr, char *s, char c)
 			j++;
 		}
 	}
-	//ptr[j] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
+
 	if (!s)
 		return (NULL);
 	ptr = mall((char *)s, c);

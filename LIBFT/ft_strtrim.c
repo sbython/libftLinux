@@ -38,7 +38,6 @@ static size_t	str_len(char const *str)
 	return (i);
 }
 
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
