@@ -52,13 +52,21 @@ FU := ft_bzero \
 FUN := $(patsubst %,%.c,$(FU))
 OBJ := $(patsubst %,%.o,$(FU))
 
+BONUS := ft_lstnew
+BONUSFUN := $(patsubst %,%.c,$(BONUS))
+BONUSOBJ := $(patsubst %,%.o,$(BONUS))
+
 all: $(NAME)
 
 $(NAME):$(OBJ)
 	$(CCF) -c $(FUN)
 	ar rcs $(NAME) $(OBJ) 
+
+bonus:$(BONUSOBJ) $(BONUSFUN)
+	$(CCF) -c $(BONUSFUN)
+	ar rcs $(NAME) $(BONUSOBJ) 
 clean:
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ) $(BONUSOBJ)
 
 fclean: clean
 	@rm -rf $(NAME)
