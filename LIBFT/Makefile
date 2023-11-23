@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: msbai <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: msbai <msbai@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 10:46:25 by msbai             #+#    #+#              #
-#    Updated: 2023/11/17 17:03:37 by msbai            ###   ########.fr        #
+#    Updated: 2023/11/23 11:10:49 by msbai            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,11 +48,17 @@ FU := ft_bzero \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
-		ft_striteri
+		ft_striteri 
+		
 FUN := $(patsubst %,%.c,$(FU))
 OBJ := $(patsubst %,%.o,$(FU))
 
-BONUS := ft_lstnew
+BONUS := ft_lstnew\
+			ft_lstadd_front\
+			ft_lstsize \
+			ft_lstlast\
+			ft_lstadd_back \
+			ft_lstdelone
 BONUSFUN := $(patsubst %,%.c,$(BONUS))
 BONUSOBJ := $(patsubst %,%.o,$(BONUS))
 
@@ -62,7 +68,9 @@ $(NAME):$(OBJ)
 	$(CCF) -c $(FUN)
 	ar rcs $(NAME) $(OBJ) 
 
-bonus:$(BONUSOBJ) $(BONUSFUN)
+bonus:$(BONUSOBJ)
+
+$(BONUSOBJ):$(BONUSFUN)
 	$(CCF) -c $(BONUSFUN)
 	ar rcs $(NAME) $(BONUSOBJ) 
 clean:

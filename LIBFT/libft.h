@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:53:12 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/17 17:08:08 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/23 11:11:21 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ void *content;
 struct s_list *next;
 } t_list;
 
+void ft_lstdelone(t_list *lst, void (*del)(void*));
+void ft_lstadd_back(t_list **lst, t_list *new);
+t_list  *ft_lstlast(t_list *lst);
+int ft_lstsize(t_list *lst);
 t_list *ft_lstnew(void *content);
+void ft_lstadd_front(t_list **lst, t_list *new);
 size_t	ft_strlen(const char *s);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
