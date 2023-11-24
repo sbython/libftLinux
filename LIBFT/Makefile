@@ -40,7 +40,6 @@ FU := ft_bzero \
 		ft_strcat \
 		ft_strjoin \
 		ft_itoa \
-		ft_strnub \
 		ft_strtrim \
 		ft_strmapi \
 		ft_split\
@@ -53,12 +52,13 @@ FU := ft_bzero \
 FUN := $(patsubst %,%.c,$(FU))
 OBJ := $(patsubst %,%.o,$(FU))
 
-BONUS := ft_lstnew\
-			ft_lstadd_front\
-			ft_lstsize \
-			ft_lstlast\
-			ft_lstadd_back \
-			ft_lstdelone
+BONUS := ft_lstnew_bonus\
+			ft_lstadd_front_bonus\
+			ft_lstsize_bonus \
+			ft_lstlast_bonus\
+			ft_lstadd_back_bonus \
+			ft_lstdelone_bonus \
+			ft_lstclear_bonus
 BONUSFUN := $(patsubst %,%.c,$(BONUS))
 BONUSOBJ := $(patsubst %,%.o,$(BONUS))
 

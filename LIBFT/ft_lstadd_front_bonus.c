@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 09:26:41 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/23 09:55:34 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/22 17:25:48 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/24 06:41:40 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstlast(t_list *lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    t_list *ptr;
-
-    ptr = malloc(sizeof(t_list ));
-    ptr = lst;
-    while(ptr->next)
-        ptr = ptr->next;
-    return (ptr);   
+	new->next = *lst;
+	*lst = new;
 }
