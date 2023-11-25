@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:41:23 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/01 12:41:27 by msbai            ###   ########.fr       */
+/*   Created: 2023/11/23 11:11:03 by msbai             #+#    #+#             */
+/*   Updated: 2023/11/24 06:41:25 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *s, int c)
+#include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int i = 0;
-	int f = 0;
-	while(s[i])
-	{
-		i++;
-		if(s[i] == (char)c)
-			f = 1;
-	}
-	if (f == 0)
-		return (char *)(0);
-	while(s[i] != c && i > 0)
-		i--;
-	return (char *)(s + i);
+	if (!lst || !del)
+		return ;
+	(del)(lst->content);
+	free(lst);
+	lst = NULL;
 }

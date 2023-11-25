@@ -70,3 +70,10 @@ char	*ft_itoa(int n)
 	ptr[len] = '\0';
 	return (ptr);
 }
+
+// #include <stdio.h>
+
+// int main()
+// {
+// 	printf("%s ++ %s\n", ft_itoa(i n));
+// }

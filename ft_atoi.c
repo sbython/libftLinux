@@ -34,3 +34,19 @@ int	ft_atoi(const char *num)
 		res = (res * 10) + num[i++] - '0';
 	return (res * sing);
 }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+// 	printf("%d\n", ft_atoi("6549\n"));
+// 	printf("%d\n", ft_atoi("0\n"));
+// 	printf("%d\n", ft_atoi("-6549\n"));
+// 	printf("%d\n", ft_atoi("gg\n"));
+// 	printf("%d\n", ft_atoi("  -ef\n"));
+// 	printf("%d\n", ft_atoi("+132tgr34\n"));
+// 	printf("%d\n", ft_atoi(""));
+// 	//printf("%d\n", ft_atoi(NULL));
+// 	//printf("%d\n", atoi(NULL));
+// }
