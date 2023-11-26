@@ -18,9 +18,8 @@ char	*ft_strnstr(const char *str, const char *str1, size_t len)
 	size_t	i1;
 
 	i = 0;
-	i1 = 0; 
-	
-	if(!str && len == 0)
+	i1 = 0;
+	if (!str && len == 0)
 		return ((char *)str);
 	if (!*str1)
 		return ((char *)str);

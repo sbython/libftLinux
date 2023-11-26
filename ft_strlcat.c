@@ -11,15 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
 	size_t	ldest;
 	size_t	lsrc;
 	size_t	i;
-
 
 	lsrc = ft_strlen(src);
 	if (n == 0 && !dest)

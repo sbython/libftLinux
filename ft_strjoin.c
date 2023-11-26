@@ -13,11 +13,13 @@
 #include "libft.h"
 #include <stdlib.h>
 #include <string.h>
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	ls1;
 	size_t	ls2;
 	char	*ptr;
+
 	if (!s1 || !s2)
 		return (NULL);
 	ls1 = ft_strlen(s1);
