@@ -28,16 +28,6 @@ static size_t	char_check(char const *str, char const c)
 	return (0);
 }
 
-static size_t	str_len(char const *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (*(str + i))
-		i++;
-	return (i);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
@@ -50,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (*(s1 + start) && char_check(set, *(s1 + start)))
 		start++;
-	end = str_len(s1);
+	end = ft_strlen(s1);
 	while (end > start && char_check(set, *(s1 + (end - 1))))
 		end--;
 	trim = (char *)malloc(sizeof(char) * (end - start + 1));

@@ -37,15 +37,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(str[--i], fd);
 	}
 }
-#include <stdio.h>
-int main ()
-{
-	ft_putnbr_fd(100,1);
-	printf("\n");
-	ft_putnbr_fd(-100,1);
-	printf("\n");
-	ft_putnbr_fd(-2147483648,1);
-	printf("\n");
-	ft_putnbr_fd(2147483649,1);
-	printf("\n");
-}

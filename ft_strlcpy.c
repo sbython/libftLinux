@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:04:06 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/06 18:25:38 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/26 13:47:31 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 	size_t	len;
 
 	len = 0;
-	if (n <= 0)
+	if (n == 0)
 	{
 		return (ft_strlen(src));
 	}
