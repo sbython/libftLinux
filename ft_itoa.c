@@ -6,7 +6,7 @@
 /*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:13:28 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/24 14:11:17 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/26 17:31:22 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,3 @@ char	*ft_itoa(int n)
 	ptr[len] = '\0';
 	return (ptr);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	printf("%s ++ %s\n", ft_itoa(i n));
-// }

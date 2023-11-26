@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msbai <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 09:27:53 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/06 11:15:41 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/26 17:30:32 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
@@ -18,8 +20,13 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	size_t	lsrc;
 	size_t	i;
 
-	ldest = ft_strlen(dest);
+
 	lsrc = ft_strlen(src);
+	if (n == 0 && !dest)
+	{
+		return (lsrc);
+	}
+	ldest = ft_strlen(dest);
 	i = 0;
 	if (n == 0 || n <= ldest)
 	{

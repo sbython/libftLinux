@@ -6,12 +6,13 @@
 /*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:46:38 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/26 14:50:41 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/26 17:14:38 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdlib.h>
+#include <string.h>
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	ls1;
