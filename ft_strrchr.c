@@ -6,7 +6,7 @@
 /*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:41:23 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/26 14:59:59 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/27 11:35:05 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 	ptr = NULL;
 	while (s[i])
 	{
-		if (s[i] == (unsigned char)c)
+		if (s[i] == (char)c)
 			ptr = &s[i];
 		i++;
 	}
-	if ((unsigned char)c == s[i])
+	if ((char)c == s[i])
 		return ((char *)(&s[i]));
 	else
 		return ((char *)(ptr));

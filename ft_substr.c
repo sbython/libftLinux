@@ -6,7 +6,7 @@
 /*   By: msbai <msbai@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:36:23 by msbai             #+#    #+#             */
-/*   Updated: 2023/11/26 15:00:54 by msbai            ###   ########.fr       */
+/*   Updated: 2023/11/27 11:37:26 by msbai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) < start)
+	if (ft_strlen(s) <= (size_t)start)
 		return (ft_calloc(1, 1));
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
